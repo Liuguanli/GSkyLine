@@ -1,4 +1,5 @@
-package algorithm2_dimension_dsg;
+package algorithm2;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;

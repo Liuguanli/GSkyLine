@@ -1,4 +1,4 @@
-package algorithm2_dimension_dsg;
+package algorithm2;
 
 import java.util.LinkedList;
 import java.util.List;

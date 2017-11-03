@@ -53,6 +53,10 @@ public class Point implements Comparable {
         return index;
     }
 
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
     public List<Point> getParents() {
         return parents;
     }

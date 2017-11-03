@@ -1,4 +1,4 @@
-package multi_dimension_dsg;
+package algorithm2;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -47,6 +47,10 @@ public class Point implements Comparable {
         for (int i = 0; i < args.length; i++) {
             dimentionalData[i] = Float.valueOf(args[i]);
         }
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public int getIndex() {

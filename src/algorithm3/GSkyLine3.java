@@ -7,48 +7,8 @@ import java.util.*;
  * Created by apple on 2017/11/1.
  */
 public class GSkyLine3 {
-    public static void main(String[] args) {
-        DataSetReader reader = new DataSetReader();
-        try {
 
-            long begin = System.currentTimeMillis();
-            List<Point> dataItems = reader.read("datasets/anti_2.txt");
-            long end = System.currentTimeMillis();
-            System.out.println("读数据耗时:" + (end - begin));
-            System.out.println(dataItems.size());
-            Collections.sort(dataItems);
-//            for (Point point : dataItems) {
-//                System.out.println(point);
-//            }
-            begin = System.currentTimeMillis();
-            List<Layer> layers = gSkyLine(dataItems);
-            end = System.currentTimeMillis();
-            System.out.println("gSkyLine耗时:" + (end - begin));
-            begin = System.currentTimeMillis();
-            dsg(layers);
-            end = System.currentTimeMillis();
-            System.out.println("dsg耗时:" + (end - begin));
-            int k = 3;
-            begin = System.currentTimeMillis();
-            List<Group> groups = unitgroupwise(dataItems, k);
-            end = System.currentTimeMillis();
-            System.out.println("unitgroupwise耗时:" + (end - begin));
-            System.out.println("group大小：" + groups.size());
-
-//            int sum = 0;
-//            for (Layer layer : layers) {
-//                sum += layer.getLayerPoints().size();
-//                System.out.println(layer);
-//                break;
-//            }
-//            System.out.println(sum);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("finish");
-    }
-
-    public static List<Layer> gSkyLine(List<Point> points) {
+    public List<Layer> gSkyLine(List<Point> points) {
         Point point1 = points.get(0);
         point1.setLayer(0);
         int maxLayerNum = 0;
@@ -94,7 +54,7 @@ public class GSkyLine3 {
         return layers;
     }
 
-    public static void dsg(List<Layer> layers) {
+    public void dsg(List<Layer> layers) {
         if (layers == null || layers.size() < 2)
             return;
         int index = 0;
@@ -120,7 +80,7 @@ public class GSkyLine3 {
         }
     }
 
-    public static void buildRelation(List<Point> innerPoints, List<Point> outerPoints) {
+    public void buildRelation(List<Point> innerPoints, List<Point> outerPoints) {
         for (int i = 0; i < innerPoints.size(); i++) {
             Point innerPoint = innerPoints.get(i);
             for (int j = 0; j < outerPoints.size(); j++) {
@@ -135,10 +95,8 @@ public class GSkyLine3 {
         }
     }
 
-    public static List<Group> unitgroupwise(List<Point> points, int k) {
-
+    public List<Group> unitgroupwise(List<Point> points, int k) {
         List<Group> G_Skylines = new LinkedList<>();
-
         // build 1-unit group as candidate groups following reverse order of point index
         List<Group> one_unit_group = new LinkedList<>();
         for (int i = 0; i < points.size(); i++) {
@@ -197,7 +155,7 @@ public class GSkyLine3 {
             while (candidateGroup.size() > 0) {
 
                 List<Group> tempCandidateGroup = new LinkedList<>();
-                System.out.println("while begin ------" + l + "-----");
+//                System.out.println("while begin ------" + l + "-----");
                 for (int j = 0; j < candidateGroup.size(); j++) {
                     Set<Point> parentSet = new HashSet<>();
                     Group candidate = candidateGroup.get(j);
@@ -208,7 +166,6 @@ public class GSkyLine3 {
                             parentSet.add(points.get(parentsIndex.get(n)));
                         }
                     }
-                    System.out.println("who is computing? ---" + j + "---");
                     int tailSetBeginIndex = candidate.getIndex();
 
                     List<Group> unit_group = new LinkedList<>();
@@ -238,17 +195,17 @@ public class GSkyLine3 {
                     }
 
                 }
-                System.out.println("while end ------" + l + "-----");
+//                System.out.println("while end ------" + l + "-----");
 //                candidateGroup.clear();
                 candidateGroup = tempCandidateGroup;
-                System.out.println("candidateGroup大小:" + candidateGroup.size());
+//                System.out.println("candidateGroup大小:" + candidateGroup.size());
                 l++;
             }
         }
         return G_Skylines;
     }
 
-    public static Group getGlast(Group group, List<Group> groups, int from) {
+    public Group getGlast(Group group, List<Group> groups, int from) {
         Set<Point> result = new HashSet<>();
         result.addAll(group.getPoints());
         for (int i = from; i < groups.size(); i++) {

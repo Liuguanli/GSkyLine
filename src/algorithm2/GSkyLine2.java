@@ -1,54 +1,13 @@
-package algorithm2_dimension_dsg;
+package algorithm2;
 
-import java.io.IOException;
 import java.util.*;
 
 /**
  * Created by apple on 2017/11/1.
  */
 public class GSkyLine2 {
-    public static void main(String[] args) {
-        DataSetReader reader = new DataSetReader();
-        try {
-            long begin = System.currentTimeMillis();
-            String fileName = "corr_2.txt";
-            List<Point> dataItems = reader.read("datasets/" + fileName);
-            long end = System.currentTimeMillis();
-            System.out.println("读数据耗时:" + (end - begin));
-            System.out.println(dataItems.size());
-            Collections.sort(dataItems);
-            int index = 0;
-            for (int i = 0; i < dataItems.size(); i++) {
-                dataItems.get(i).setIndex(i);
-            }
-//            for (Point point : dataItems) {
-//                System.out.println(point);
-//            }
-            begin = System.currentTimeMillis();
-            List<Layer> layers = gSkyLine(dataItems);
-            end = System.currentTimeMillis();
-            System.out.println("gSkyLine耗时:" + (end - begin));
-            begin = System.currentTimeMillis();
-            dsg(layers);
-            end = System.currentTimeMillis();
-            System.out.println("dsg耗时:" + (end - begin));
 
-//            for (Point point : dataItems) {
-//                System.out.println(point);
-//            }
-            begin = System.currentTimeMillis();
-            int k = 2;
-            List<Group> groups = pointWise(dataItems, k);
-            end = System.currentTimeMillis();
-            System.out.println("pointWise耗时:" + (end - begin));
-            System.out.println("group大小：" + groups.size());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("finish");
-    }
-
-    public static List<Layer> gSkyLine(List<Point> points) {
+    public List<Layer> gSkyLine(List<Point> points) {
         Point point1 = points.get(0);
         point1.setLayer(0);
         int maxLayerNum = 0;
@@ -94,7 +53,7 @@ public class GSkyLine2 {
         return layers;
     }
 
-    public static void dsg(List<Layer> layers) {
+    public void dsg(List<Layer> layers) {
         if (layers == null || layers.size() < 2)
             return;
         int index = 0;
@@ -106,33 +65,20 @@ public class GSkyLine2 {
             for (int j = 0; j < i; j++) {
                 Layer inner = layers.get(j);
                 List<Point> innerPoints = inner.getLayerPoints();
-
-//                System.out.println("------------------innerPoints.size:" + innerPoints.size());
                 long begin = System.currentTimeMillis();
                 buildRelation(innerPoints, outerPoints);
                 long end = System.currentTimeMillis();
-//                System.out.println("buildRelation cost:" + (end - begin));
-                if (end - begin > 10) {
-                    System.out.println("buildRelation cost:" + (end - begin));
-                    System.out.println("index i=" + i + " j=" + j);
-                }
-
-//
-//                for (Point innerPoint : innerPoints) {
-//                    for (Point outerPoint : outerPoints) {
-//                        if (innerPoint.isDominate(outerPoint)) {
-//                            System.out.println("isDominate");
-//                            innerPoint.getChildrenIndex().add(outerPoint.getIndex());
-//                            outerPoint.getParentsIndex().add(innerPoint.getIndex());
-//                        }
-//                    }
+//                if (end - begin > 10) {
+//                    System.out.println("buildRelation cost:" + (end - begin));
+//                    System.out.println("index i=" + i + " j=" + j);
 //                }
+
             }
 
         }
     }
 
-    public static void buildRelation(List<Point> innerPoints, List<Point> outerPoints) {
+    public void buildRelation(List<Point> innerPoints, List<Point> outerPoints) {
         for (int i = 0; i < innerPoints.size(); i++) {
             Point innerPoint = innerPoints.get(i);
             for (int j = 0; j < outerPoints.size(); j++) {
@@ -148,7 +94,7 @@ public class GSkyLine2 {
     }
 
 
-    public static List<Group> pointWise(List<Point> points, int k) {
+    public List<Group> pointWise(List<Point> points, int k) {
         Group group0 = new Group();
         group0.setIndex(0);
         LinkedList<Group>[] G_Skylines = new LinkedList[k + 1];
@@ -223,7 +169,7 @@ public class GSkyLine2 {
         return G_Skylines[k];
     }
 
-    public static int finMaxLayer(Group group) {
+    public int finMaxLayer(Group group) {
         int maxLayer = 0;
         List<Point> points = group.getPoints();
         for (int i = 0; i < points.size(); i++) {

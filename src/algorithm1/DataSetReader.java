@@ -1,5 +1,6 @@
 package algorithm1;
 
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,9 +19,8 @@ public class DataSetReader {
 
         String str = null;
         List<Point> dataItems = new LinkedList<>();
-        while((str = br.readLine()) != null) {
-//            sb.append(str+"/n");
-//            System.out.println(str);
+        int index = 0;
+        while ((str = br.readLine()) != null) {
             String[] args = str.split(" ");
             Point point = new Point(args);
             dataItems.add(point);

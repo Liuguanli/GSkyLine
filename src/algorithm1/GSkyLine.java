@@ -9,29 +9,8 @@ import java.util.List;
  * Created by apple on 2017/11/1.
  */
 public class GSkyLine {
-    public static void main(String[] args) {
-        DataSetReader reader = new DataSetReader();
-        try {
-            List<Point> dataItems = reader.read("datasets/inde_2.txt");
-            System.out.println(dataItems.size());
-            Collections.sort(dataItems);
-//            for (algorithm1.Point point : dataItems) {
-//                System.out.println(point);
-//            }
-            List<Layer> layers = gSkyLine(dataItems);
-            int sum = 0;
-            for (Layer layer : layers) {
-                sum += layer.getLayerPoints().size();
-                System.out.println(layer);
-            }
-            System.out.println(sum);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("finish");
-    }
 
-    public static List<Layer> gSkyLine(List<Point> points) {
+    public List<Layer> gSkyLine(List<Point> points) {
         Point point1 = points.get(0);
         point1.setLayer(0);
         int maxLayerNum = 0;
