@@ -41,6 +41,16 @@ public class Layer {
         this.layerPoints = layerPoints;
     }
 
+    public boolean isDominate(Point point) {
+        for (int i = 0; i < layerPoints.size(); i++) {
+            Point layerPoint = layerPoints.get(i);
+            if (layerPoint.isDominate(point)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "algorithm1.Layer{" +

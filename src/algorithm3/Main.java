@@ -23,7 +23,13 @@ public class Main {
             System.out.println("读数据耗时:" + (end - begin));
             Collections.sort(dataItems);
             begin = System.currentTimeMillis();
-            List<Layer> layers = gSkyLine3.gSkyLine(dataItems);
+            List<Layer> layers = null;
+            if (filePath.split("//.")[0].split("_")[1].equals("2")) {
+                layers = gSkyLine3.gSkyLine(dataItems);
+            } else {
+                layers = gSkyLine3.gSkyLineforMultiDimen(dataItems);
+            }
+            System.out.println("layer1 point number:" + layers.get(0).getLayerPoints().size());
             end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
             begin = System.currentTimeMillis();

@@ -26,7 +26,12 @@ public class Main {
                 dataItems.get(i).setIndex(i);
             }
             begin = System.currentTimeMillis();
-            List<algorithm2.Layer> layers = gSkyLine2.gSkyLine(dataItems);
+            List<algorithm2.Layer> layers = null;
+            if (filePath.split("//.")[0].split("_")[1].equals("2")) {
+                layers = gSkyLine2.gSkyLine(dataItems);
+            } else {
+                layers = gSkyLine2.gSkyLineforMultiDimen(dataItems);
+            }
             end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
             begin = System.currentTimeMillis();

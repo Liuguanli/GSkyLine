@@ -28,7 +28,10 @@ public class Main {
             List<Point> dataItems = reader.read(filePath);
             Collections.sort(dataItems);
             GSkyLine gSkyLine = new GSkyLine();
+            long begin = System.currentTimeMillis();
             List<Layer> layers = gSkyLine.gSkyLine(dataItems);
+            long end = System.currentTimeMillis();
+            System.out.println("gSkyLine耗时:" + (end - begin));
         } catch (IOException e) {
             e.printStackTrace();
         }
