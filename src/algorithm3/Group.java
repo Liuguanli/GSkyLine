@@ -54,7 +54,7 @@ public class Group {
     @Override
     public String toString() {
         return "Group{" +
-                "index=" + index +
+//                "index=" + index +
                 ", points=" + points +
                 '}';
     }

@@ -1,6 +1,10 @@
 package algorithm3;
 
+import utils.Constants;
+import utils.PropertiesHelper;
+
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -100,7 +104,13 @@ public class GSkyLine3 {
         // build 1-unit group as candidate groups following reverse order of point index
         List<Group> one_unit_group = new LinkedList<>();
         for (int i = 0; i < points.size(); i++) {
+
             Point point = points.get(i);
+
+//            if ((Math.abs(point.getDimentionalData()[0] - 167.9396f)) < 0.00001f && (Math.abs(point.getDimentionalData()[1] - 0.452f)) < 0.00001f) {
+//                System.out.print("");
+//            }
+
             Group unitGroup = new Group();
             List<Integer> parentIndex = point.getParentsIndex();
             if (parentIndex.size() >= k) {
@@ -110,8 +120,14 @@ public class GSkyLine3 {
                 unitGroup.getPoints().add(points.get(parentIndex.get(j)));
             }
             unitGroup.getPoints().add(point);
-            one_unit_group.add(unitGroup);
+            if (unitGroup.getPoints().size() == k) {
+                G_Skylines.add(unitGroup);
+            } else {
+                one_unit_group.add(unitGroup);
+            }
         }
+        System.out.println("G_Skylines：" + G_Skylines.size());
+        System.out.println("G_Skylines contents ：" + G_Skylines);
         // reverse order
         Collections.sort(one_unit_group, new Comparator<Group>() {
             @Override
@@ -132,33 +148,28 @@ public class GSkyLine3 {
         System.out.println("one_unit_group大小：" + one_unit_group.size());
 
         for (int i = 0; i < one_unit_group.size(); i++) {
-            Group group = one_unit_group.get(i);
-            Group gLast = getGlast(group, one_unit_group, i + 1);
+            Group candidateGroup = one_unit_group.get(i);
+            Group gLast = getGlast(candidateGroup, one_unit_group, i + 1, k);
             if (gLast.getPoints().size() == k) {
                 G_Skylines.add(gLast);
                 break;
             } else if (gLast.getPoints().size() < k) {
                 break;
             }
-            int l = 2;
-            List<Group> candidateGroup = new LinkedList<Group>() {
-                {
 
-                    for (int j = 0; j < one_unit_group.size(); j++) {
-                        if (one_unit_group.get(j).getPoints().size() == 1) {
-                            add(one_unit_group.get(j));
-                        }
-                    }
+            int l = 2;
+            List<Group> candidateGroups = new LinkedList<Group>() {
+                {
+                    add(candidateGroup);
                 }
             };
-
-            while (candidateGroup.size() > 0) {
-
+            while (candidateGroups.size() > 0) {
+                System.out.println("candidateGroups大小：" + candidateGroups.size());
                 List<Group> tempCandidateGroup = new LinkedList<>();
 //                System.out.println("while begin ------" + l + "-----");
-                for (int j = 0; j < candidateGroup.size(); j++) {
+                for (int j = 0; j < candidateGroups.size(); j++) {
                     Set<Point> parentSet = new HashSet<>();
-                    Group candidate = candidateGroup.get(j);
+                    Group candidate = candidateGroups.get(j);
                     List<Point> groupPoints = candidate.getPoints();
                     for (int m = 0; m < groupPoints.size(); m++) {
                         List<Integer> parentsIndex = groupPoints.get(m).getParentsIndex();
@@ -175,29 +186,39 @@ public class GSkyLine3 {
                         Group uj = one_unit_group.get(m);
                         for (int n = 0; n < uj.getPoints().size(); n++) {
                             if (!parentSet.contains(uj.getPoints().get(n))) {
-                                List<Point> candidatePoints = candidate.getPoints();
+                                List<Point> candidatePoints = new LinkedList<>(candidate.getPoints());
+//                                System.out.println("candidatePoints.size()：" + candidatePoints.size());
                                 List<Point> ujPoints = uj.getPoints();
                                 for (int o = 0; o < ujPoints.size(); o++) {
                                     if (!candidatePoints.contains(ujPoints.get(o))) {
                                         candidatePoints.add(ujPoints.get(o));
                                     }
                                 }
+//                                System.out.println("candidatePoints.size()：" + candidatePoints.size());
                                 if (candidatePoints.size() == k) {
-                                    G_Skylines.add(candidate);
+                                    Group group = new Group();
+                                    group.setPoints(candidatePoints);
+                                    G_Skylines.add(group);
                                 } else if (candidatePoints.size() < k) {
-                                    candidate.setIndex(uj.getIndex());
-                                    candidate.setPoints(candidatePoints);
-                                    tempCandidateGroup.add(candidate);
+                                    Group temp = new Group();
+                                    temp.setIndex(uj.getIndex());
+                                    temp.setPoints(candidatePoints);
+                                    tempCandidateGroup.add(temp);
                                 }
+                                break;
                             }
                         }
 
                     }
 
                 }
+
+
 //                System.out.println("while end ------" + l + "-----");
 //                candidateGroup.clear();
-                candidateGroup = tempCandidateGroup;
+                candidateGroups = tempCandidateGroup;
+                System.out.println("tempCandidateGroup：" + tempCandidateGroup.size());
+                System.out.println("G_Skylines：" + G_Skylines.size());
 //                System.out.println("candidateGroup大小:" + candidateGroup.size());
                 l++;
             }
@@ -205,7 +226,8 @@ public class GSkyLine3 {
         return G_Skylines;
     }
 
-    public Group getGlast(Group group, List<Group> groups, int from) {
+    public Group getGlast(Group group, List<Group> groups, int from, int k) {
+        long begin = System.currentTimeMillis();
         Set<Point> result = new HashSet<>();
         result.addAll(group.getPoints());
         for (int i = from; i < groups.size(); i++) {
@@ -214,6 +236,7 @@ public class GSkyLine3 {
         List<Point> points = new LinkedList<>(result);
         Group gLast = new Group();
         gLast.setPoints(points);
+        long end = System.currentTimeMillis();
         return gLast;
     }
 

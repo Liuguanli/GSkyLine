@@ -136,12 +136,18 @@ public class GSkyLine2 {
                     Point point = iterator.next();
                     List<Integer> parents = point.getParentsIndex();
                     boolean isAddable = true;
-                    for (int j = 0; j < parents.size(); j++) {
-                        if (!group.getPoints().contains(points.get(parents.get(j)))) {
-                            isAddable = false;
-                            break;
+                    // 论文中没有提到这个  我们认为下标小的点是不能再加进来的
+                    if (!group.isAddable(point)) {
+                        isAddable = false;
+                    } else {
+                        for (int j = 0; j < parents.size(); j++) {
+                            if (!group.getPoints().contains(points.get(parents.get(j)))) {
+                                isAddable = false;
+                                break;
+                            }
                         }
                     }
+
                     if (isAddable) {
                         Group newGroup = new Group();
                         newGroup.getPoints().addAll(group.getPoints());

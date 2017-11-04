@@ -44,8 +44,8 @@ public class Layer {
     @Override
     public String toString() {
         return "algorithm1.Layer{" +
-                "tailPoint=" + tailPoint +
-                ", layerNum=" + layerNum +
+//                "tailPoint=" + tailPoint +
+//                ", layerNum=" + layerNum +
                 ", layerPoints=" + layerPoints +
                 '}';
     }

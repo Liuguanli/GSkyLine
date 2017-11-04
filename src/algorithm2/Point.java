@@ -1,5 +1,6 @@
 package algorithm2;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class Point implements Comparable {
 
     private int layer;
-    private float[] dimentionalData;
+    private BigDecimal[] dimentionalData;
 
     private List<Point> parents;
     private List<Point> children;
@@ -37,7 +38,7 @@ public class Point implements Comparable {
     }
 
     public Point(String[] args, int index) {
-        dimentionalData = new float[args.length];
+        dimentionalData = new BigDecimal[args.length];
         parents = new LinkedList<>();
         children = new LinkedList<>();
         parentsIndex = new LinkedList<>();
@@ -45,7 +46,7 @@ public class Point implements Comparable {
         this.index = index;
 
         for (int i = 0; i < args.length; i++) {
-            dimentionalData[i] = Float.valueOf(args[i]);
+            dimentionalData[i] = new BigDecimal(args[i]);
         }
     }
 
@@ -81,40 +82,34 @@ public class Point implements Comparable {
         return layer;
     }
 
-    public float[] getDimentionalData() {
+    public BigDecimal[] getDimentionalData() {
         return dimentionalData;
     }
 
     @Override
     public int compareTo(Object o) {
-        if (this.dimentionalData[0] > ((Point) o).dimentionalData[0]) {
-            return 1;
-        } else if (this.dimentionalData[0] < ((Point) o).dimentionalData[0]) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return this.dimentionalData[0].compareTo(((Point) o).dimentionalData[0]);
     }
 
     @Override
     public String toString() {
         return "Point{" +
-                "layer=" + layer +
+//                "layer=" + layer +
                 ", dimentionalData=" + Arrays.toString(dimentionalData) +
-                ", parentsIndex=" + parentsIndex +
-                ", childrenIndex=" + childrenIndex +
-                ", index=" + index +
+//                ", parentsIndex=" + parentsIndex +
+//                ", childrenIndex=" + childrenIndex +
+//                ", index=" + index +
                 '}';
     }
 
     public boolean isDominate(Point p2) {
-        float[] dims1 = this.getDimentionalData();
-        float[] dims2 = p2.getDimentionalData();
+        BigDecimal[] dims1 = this.getDimentionalData();
+        BigDecimal[] dims2 = p2.getDimentionalData();
         int euqalsNum = 0;
         for (int i = 0; i < dims1.length; i++) {
-            if (dims1[i] > dims2[i]) {
+            if (dims1[i].compareTo(dims2[i]) == 1) {
                 return false;
-            } else if (dims1[i] == dims2[i]) {
+            } else if (dims1[i].compareTo(dims2[i]) == 0) {
                 euqalsNum++;
             }
         }

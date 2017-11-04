@@ -1,19 +1,20 @@
 package algorithm1;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 /**
  * Created by apple on 2017/11/1.
  */
-public class Point implements  Comparable{
+public class Point implements Comparable {
 
     private int layer;
-    private float[] dimentionalData;
+    private BigDecimal[] dimentionalData;
 
     public Point(String[] args) {
-        dimentionalData = new float[args.length];
+        dimentionalData = new BigDecimal[args.length];
         for (int i = 0; i < args.length; i++) {
-            dimentionalData[i] = Float.valueOf(args[i]);
+            dimentionalData[i] = new BigDecimal(args[i]);
         }
     }
 
@@ -25,19 +26,13 @@ public class Point implements  Comparable{
         return layer;
     }
 
-    public float[] getDimentionalData() {
+    public BigDecimal[] getDimentionalData() {
         return dimentionalData;
     }
 
     @Override
     public int compareTo(Object o) {
-        if (this.dimentionalData[0] > ((Point)o).dimentionalData[0]) {
-            return 1;
-        } else if (this.dimentionalData[0] < ((Point)o).dimentionalData[0]) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return this.dimentionalData[0].compareTo(((Point)o).dimentionalData[0]);
     }
 
     @Override
@@ -49,13 +44,13 @@ public class Point implements  Comparable{
     }
 
     public boolean isDominate(Point p2) {
-        float[] dims1 = this.getDimentionalData();
-        float[] dims2 = p2.getDimentionalData();
+        BigDecimal[] dims1 = this.getDimentionalData();
+        BigDecimal[] dims2 = p2.getDimentionalData();
         int euqalsNum = 0;
         for (int i = 0; i < dims1.length; i++) {
-            if (dims1[i] > dims2[i]) {
+            if (dims1[i].compareTo(dims2[i]) == 1) {
                 return false;
-            } else if (dims1[i] == dims2[i]) {
+            } else if (dims1[i].compareTo(dims2[i]) == 0) {
                 euqalsNum++;
             }
         }

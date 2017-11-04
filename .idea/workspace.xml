@@ -2,25 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d11fe609-f6c0-46f7-ad82-f62378fd8b30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/FileWriter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Gskyline/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/GSkyLine.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/GSkyLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Layer.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Layer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Main.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Point.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm1/Point.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/GSkyLine2.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/GSkyLine2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Group.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Group.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Layer.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Layer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Main.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Point.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm2/Point.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3$1.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3$2.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/GSkyLine3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Group.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Group.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Layer.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Layer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Main.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Point.class" afterPath="$PROJECT_DIR$/out/production/Gskyline/algorithm3/Point.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gskyline.properties" afterPath="$PROJECT_DIR$/gskyline.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm1/GSkyLine.java" afterPath="$PROJECT_DIR$/src/algorithm1/GSkyLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm1/Layer.java" afterPath="$PROJECT_DIR$/src/algorithm1/Layer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm1/Main.java" afterPath="$PROJECT_DIR$/src/algorithm1/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm1/Point.java" afterPath="$PROJECT_DIR$/src/algorithm1/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm2/GSkyLine2.java" afterPath="$PROJECT_DIR$/src/algorithm2/GSkyLine2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm2/Group.java" afterPath="$PROJECT_DIR$/src/algorithm2/Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm2/Layer.java" afterPath="$PROJECT_DIR$/src/algorithm2/Layer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm2/Main.java" afterPath="$PROJECT_DIR$/src/algorithm2/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm2/Point.java" afterPath="$PROJECT_DIR$/src/algorithm2/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm3/GSkyLine3.java" afterPath="$PROJECT_DIR$/src/algorithm3/GSkyLine3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm3/Group.java" afterPath="$PROJECT_DIR$/src/algorithm3/Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm3/Layer.java" afterPath="$PROJECT_DIR$/src/algorithm3/Layer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm3/Main.java" afterPath="$PROJECT_DIR$/src/algorithm3/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/algorithm3/Point.java" afterPath="$PROJECT_DIR$/src/algorithm3/Point.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,14 +45,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GSkyLine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm1/GSkyLine.java">
+      <file leaf-file-name="gskyline.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gskyline.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,21 +58,19 @@
       <file leaf-file-name="GSkyLine2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithm2/GSkyLine2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+            <state relative-caret-position="915">
+              <caret line="61" column="49" lean-forward="true" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm2/Main.java">
+      <file leaf-file-name="GSkyLine3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/algorithm3/GSkyLine3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-798">
+              <caret line="181" column="62" lean-forward="true" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,31 +78,21 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithm3/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="437">
+              <caret line="71" column="15" lean-forward="false" selection-start-line="56" selection-start-column="14" selection-end-line="71" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algorithm2/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="619">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GSkyLine3.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/algorithm3/GSkyLine3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2184">
-              <caret line="236" column="37" lean-forward="false" selection-start-line="236" selection-start-column="37" selection-end-line="236" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gskyline.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gskyline.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -118,6 +111,13 @@
       <find>isDominate</find>
       <find>System</find>
       <find>UnitGroup</find>
+      <find>G_Skylines.add</find>
+      <find>gLast</find>
+      <find>candidateGroups</find>
+      <find>candidate</find>
+      <find>G_Skyline</find>
+      <find>167.9396</find>
+      <find>index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,12 +131,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/FileReader.java" />
         <option value="$PROJECT_DIR$/src/DataSetReader.java" />
         <option value="$PROJECT_DIR$/src/Point.java" />
         <option value="$PROJECT_DIR$/src/Layer.java" />
         <option value="$PROJECT_DIR$/src/GSkyLine.java" />
-        <option value="$PROJECT_DIR$/src/algorithm1/Point.java" />
         <option value="$PROJECT_DIR$/src/algorithm2/GSkyLine.java" />
         <option value="$PROJECT_DIR$/src/algorithm_multi_dimension/Layer.java" />
         <option value="$PROJECT_DIR$/src/algorithm2_multi_dimension/GSkyLine.java" />
@@ -148,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/multi_dimension_dsg/Point.java" />
         <option value="$PROJECT_DIR$/src/algorithm2_dimension_dsg/Point.java" />
         <option value="$PROJECT_DIR$/src/algorithm2_dimension_dsg/Group.java" />
-        <option value="$PROJECT_DIR$/src/algorithm3/Group.java" />
         <option value="$PROJECT_DIR$/src/algorithm3/GSkyLine2.java" />
         <option value="$PROJECT_DIR$/src/algorithm3/UnitGroup.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
@@ -162,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/gskyline.properties" />
         <option value="$PROJECT_DIR$/src/utils/PropertiesHelper.java" />
-        <option value="$PROJECT_DIR$/src/algorithm3/Point.java" />
         <option value="$PROJECT_DIR$/src/algorithm2_dimension_dsg/GSkyLine2.java" />
         <option value="$PROJECT_DIR$/src/algorithm_multi_dimension/GSkyLine.java" />
         <option value="$PROJECT_DIR$/src/multi_dimension_dsg/Main.java" />
@@ -175,10 +171,17 @@
         <option value="$PROJECT_DIR$/src/algorithm1/GSkyLine.java" />
         <option value="$PROJECT_DIR$/src/algorithm1/Main.java" />
         <option value="$PROJECT_DIR$/src/algorithm2/GSkyLine2.java" />
-        <option value="$PROJECT_DIR$/src/algorithm2/Main.java" />
+        <option value="$PROJECT_DIR$/src/algorithm3/Group.java" />
+        <option value="$PROJECT_DIR$/src/algorithm2/Group.java" />
+        <option value="$PROJECT_DIR$/src/algorithm3/Layer.java" />
+        <option value="$PROJECT_DIR$/src/algorithm2/Layer.java" />
+        <option value="$PROJECT_DIR$/src/algorithm3/Point.java" />
+        <option value="$PROJECT_DIR$/src/algorithm2/Point.java" />
+        <option value="$PROJECT_DIR$/src/algorithm1/Point.java" />
         <option value="$PROJECT_DIR$/src/algorithm3/GSkyLine3.java" />
-        <option value="$PROJECT_DIR$/src/algorithm3/Main.java" />
         <option value="$PROJECT_DIR$/gskyline.properties" />
+        <option value="$PROJECT_DIR$/src/algorithm3/Main.java" />
+        <option value="$PROJECT_DIR$/src/algorithm2/Main.java" />
       </list>
     </option>
   </component>
@@ -358,52 +361,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="GSkyLine3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algorithm3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm3.GSkyLine3" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Gskyline" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Test" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Gskyline" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="algorithm3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="algorithm3.Main" />
-      <option name="VM_PARAMETERS" value="-Xms512m -Xmx7000m" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -674,16 +637,72 @@
       <envs />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Application.GSkyLine3" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+    <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algorithm3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="algorithm3.Main" />
+      <option name="VM_PARAMETERS" value="-Xms512m -Xmx7000m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Gskyline" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GSkyLine3" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algorithm3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="algorithm3.GSkyLine3" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Gskyline" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main(1)" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="algorithm3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="algorithm2.Main" />
+      <option name="VM_PARAMETERS" value="-Xms512m -Xmx7000m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Gskyline" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GSkyLine3" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main(1)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -705,6 +724,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-351" y="-1417" width="2515" height="1372" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -715,14 +735,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38118023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299636" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12131015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12131015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -742,7 +762,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algorithm3/GSkyLine3.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -803,36 +831,6 @@
         <state relative-caret-position="120">
           <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm2/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm3/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,16 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm3/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="55" column="37" lean-forward="false" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-          <folding>
-            <element signature="e#1347#1348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/multi_dimension/Layer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -974,18 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm2/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-395">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1742#1743#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/multi_dimension_dsg/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1018,57 +994,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm1/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm1/Layer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="51" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#482#483#0" expanded="false" />
+            <element signature="e#514#515#0" expanded="false" />
+            <element signature="e#563#564#0" expanded="false" />
+            <element signature="e#605#606#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm2/Layer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm3/Layer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="345">
           <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm1/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#705#706#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/math/BigDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="2641" column="46" lean-forward="false" selection-start-line="2641" selection-start-column="46" selection-end-line="2641" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/inde_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm1/GSkyLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="-413">
           <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1076,18 +1054,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm2/GSkyLine2.java">
+    <entry file="file://$PROJECT_DIR$/src/algorithm3/Group.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        <state relative-caret-position="639">
+          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm2/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/algorithm3/Layer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="37" column="25" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="418">
+          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm2/Layer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm2/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="35" column="41" lean-forward="false" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm3/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="56" column="24" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm2/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1096,27 +1108,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gskyline.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="15">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm2/GSkyLine2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="49" lean-forward="true" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm3/GSkyLine3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-798">
+          <caret line="181" column="62" lean-forward="true" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm3/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="437">
+          <caret line="71" column="15" lean-forward="false" selection-start-line="56" selection-start-column="14" selection-end-line="71" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm3/GSkyLine3.java">
+    <entry file="file://$PROJECT_DIR$/src/algorithm2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="236" column="37" lean-forward="false" selection-start-line="236" selection-start-column="37" selection-end-line="236" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="619">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

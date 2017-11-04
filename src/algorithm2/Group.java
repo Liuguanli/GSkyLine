@@ -31,6 +31,15 @@ public class Group {
         this.points = points;
     }
 
+    public boolean isAddable(Point point) {
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).getIndex() >= point.getIndex()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,7 +62,7 @@ public class Group {
     @Override
     public String toString() {
         return "Group{" +
-                "index=" + index +
+//                "index=" + index +
                 ", points=" + points +
                 '}';
     }
