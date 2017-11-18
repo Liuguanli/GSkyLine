@@ -1,4 +1,4 @@
-package algorithm2;
+package algorithm4;
 
 import utils.Constants;
 import utils.PropertiesHelper;
@@ -38,6 +38,7 @@ public class Main {
             System.out.println("layer(0):" + layers.get(0));
             System.out.println("layer(1):" + layers.get(1));
 
+            int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
 
             end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
@@ -47,7 +48,6 @@ public class Main {
             System.out.println("dsg耗时:" + (end - begin));
             test(dataItems);
             begin = System.currentTimeMillis();
-            int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
             List<Group> groups = gSkyLine2.pointWise(dataItems, k);
             end = System.currentTimeMillis();
             System.out.println("pointWise耗时:" + (end - begin));

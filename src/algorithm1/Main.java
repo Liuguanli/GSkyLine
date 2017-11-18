@@ -17,7 +17,7 @@ import java.util.Properties;
  * Algorithm 1 of 《Finding Pareto Optimal Groups: Group-based Skyline》
  * input: a set of n points in two dimensional space.
  * output: l skyline layers.
- *
+ * <p>
  * ps: we can support n dimensional space
  */
 public class Main {
@@ -32,9 +32,17 @@ public class Main {
             List<Layer> layers = gSkyLine.gSkyLine(dataItems);
             long end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
+            printLayerPointsNum(layers);
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println("finish");
+    }
+
+    public static void printLayerPointsNum(List<Layer> layers) {
+        for (int i = 0; i < layers.size(); i++) {
+            System.out.println("第" + i + "层的点的数量是:" + layers.get(i).getLayerPoints().size());
+        }
+
     }
 }

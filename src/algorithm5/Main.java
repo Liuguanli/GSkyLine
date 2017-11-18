@@ -1,22 +1,21 @@
-package algorithm2;
+package algorithm5;
 
 import utils.Constants;
 import utils.PropertiesHelper;
 
 import java.io.IOException;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-
 
 /**
  * Created by apple on 2017/11/3.
  */
 public class Main {
     public static void main(String[] args) {
-        GSkyLine2 gSkyLine2 = new GSkyLine2();
+        GSkyLine3 gSkyLine3 = new GSkyLine3();
         DataSetReader reader = new DataSetReader();
         try {
+
             long begin = System.currentTimeMillis();
             String filePath = PropertiesHelper.properties.get(Constants.FILE_PATH);
             List<Point> dataItems = reader.read(filePath);
@@ -29,32 +28,31 @@ public class Main {
             begin = System.currentTimeMillis();
             List<Layer> layers = null;
             if (filePath.split("//.")[0].split("_")[1].equals("2")) {
-                layers = gSkyLine2.gSkyLine(dataItems);
+                layers = gSkyLine3.gSkyLine(dataItems);
             } else {
-                layers = gSkyLine2.gSkyLineforMultiDimen(dataItems);
+                layers = gSkyLine3.gSkyLineforMultiDimen(dataItems);
             }
+            testgSkyLine(layers);
             System.out.println("layer1 point number:" + layers.get(0).getLayerPoints().size());
             System.out.println("layer2 point number:" + layers.get(1).getLayerPoints().size());
             System.out.println("layer(0):" + layers.get(0));
             System.out.println("layer(1):" + layers.get(1));
-
-
             end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
             begin = System.currentTimeMillis();
-            gSkyLine2.dsg(layers);
+            gSkyLine3.dsg(layers);
+            test(dataItems);
             end = System.currentTimeMillis();
             System.out.println("dsg耗时:" + (end - begin));
-            test(dataItems);
-            begin = System.currentTimeMillis();
             int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
-            List<Group> groups = gSkyLine2.pointWise(dataItems, k);
+            begin = System.currentTimeMillis();
+            List<Group> groups = gSkyLine3.unitgroupwise(dataItems, k);
             end = System.currentTimeMillis();
-            System.out.println("pointWise耗时:" + (end - begin));
+            System.out.println("unitgroupwise耗时:" + (end - begin));
             System.out.println("group大小：" + groups.size());
-//            for (int i = 0; i < groups.size(); i++) {
-//                System.out.println(groups.get(i));
-//            }
+            for (int i = 0; i < groups.size(); i++) {
+                System.out.println(groups.get(i));
+            }
 
 //            for (int i = 0; i < groups.size(); i++) {
 //                Group group = groups.get(i);
@@ -81,27 +79,35 @@ public class Main {
     }
 
     public static void test(List<Point> points) {
-        Collections.sort(points, new Comparator<Point>() {
-            @Override
-            public int compare(Point o1, Point o2) {
-                if (o1.getChildrenIndex().size() > o2.getChildrenIndex().size()) {
-                    return 1;
-                } else if (o1.getChildrenIndex().size() < o2.getChildrenIndex().size()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+        System.err.println("test" + points.size());
         for (int i = 0; i < points.size(); i++) {
             Point point = points.get(i);
-            System.out.println("第" + i + "个点的孩子数量：" + point.getChildrenIndex().size() + " 父亲数量：" + point.getParentsIndex().size());
-//            if (point.getDimentionalData()[0] == 167.9396F && point.getDimentionalData()[1] == 0.452F) {
-//                for (int j = 0; j < point.getParentsIndex().size(); j++) {
-//                    System.out.println("parent " + j + " :" + points.get(point.getParentsIndex().get(j)));
-//                }
+//            if ((Math.abs(point.getDimentionalData()[0] - 167.9396f)) < 0.00001f && (Math.abs(point.getDimentionalData()[1] - 0.452f)) < 0.00001f) {
+//                System.err.println("parent " + point);
+//                System.err.println("parent num " + point.getParentsIndex().size());
+//                System.err.println("layer num " + point.getLayer());
+////                for (int j = 0; j < point.getParentsIndex().size(); j++) {
+////                    System.err.println("parent " + j + " :" + points.get(point.getParentsIndex().get(j)));
+////                }
 //            }
         }
     }
+
+    // 验证layer建立有没有问题
+    public static void testgSkyLine(List<Layer> layers) {
+        System.err.println("testgSkyLine");
+        for (int i = 0; i < layers.size() - 1; i++) {
+            Layer lowLayer = layers.get(i);
+            for (int j = i + 1; j < layers.size(); j++) {
+                Layer highLayer = layers.get(j);
+                for (int l = 0; l < highLayer.getLayerPoints().size(); l++) {
+                    if (!lowLayer.isDominate(highLayer.getLayerPoints().get(l))) {
+                        System.err.println("highLayer Point:" + highLayer.getLayerPoints().get(l));
+                    }
+                }
+            }
+        }
+    }
+
 
 }
