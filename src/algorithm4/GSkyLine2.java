@@ -53,13 +53,13 @@ public class GSkyLine2 {
         return layers;
     }
 
-    public void dsg(List<Layer> layers) {
+    public void dsg(List<Layer> layers, int k) {
         if (layers == null || layers.size() < 2)
             return;
         int index = 0;
         System.out.println("层数：" + layers.size());
         int iter = 0;
-        for (int i = 1; i < layers.size(); i++) {
+        for (int i = 1; i < k; i++) {
             Layer outer = layers.get(i);
             List<Point> outerPoints = outer.getLayerPoints();
             for (int j = 0; j < i; j++) {
@@ -93,6 +93,15 @@ public class GSkyLine2 {
         }
     }
 
+    private List<Point> choosePointFromTopKLayer(List<Point> points, int k) {
+        List<Point> result = new ArrayList<>();
+        for (Point point : points) {
+            if (point.getLayer() < k) {
+                result.add(point);
+            }
+        }
+        return result;
+    }
 
     public List<Group> pointWise(List<Point> points, int k) {
         Group group0 = new Group();
@@ -100,12 +109,13 @@ public class GSkyLine2 {
         LinkedList<Group>[] G_Skylines = new LinkedList[k + 1];
         G_Skylines[0] = new LinkedList<>();
         G_Skylines[0].add(group0);
+        List<Point> topKLayerPoints = choosePointFromTopKLayer(points, k);
         for (int i = 0; i < k; i++) {
             LinkedList<Group> G_Skyline = G_Skylines[i];
             for (int l = 0; l < G_Skyline.size(); l++) {
 //                System.out.println("G_Skyline.size()->" + G_Skyline.size());
                 Group group = G_Skyline.get(l);
-                Set<Point> tailSet = new HashSet<>(points);
+                Set<Point> tailSet = new HashSet<>(topKLayerPoints);
                 Set<Point> childrenSet = new HashSet<>();
                 for (Point point : group.getPoints()) {
                     List<Integer> childrenIndex = point.getChildrenIndex();

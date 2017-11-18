@@ -43,10 +43,10 @@ public class Main {
             end = System.currentTimeMillis();
             System.out.println("gSkyLine耗时:" + (end - begin));
             begin = System.currentTimeMillis();
-            gSkyLine2.dsg(layers);
+            gSkyLine2.dsg(layers, k);
             end = System.currentTimeMillis();
             System.out.println("dsg耗时:" + (end - begin));
-            test(dataItems);
+            // test(dataItems);
             begin = System.currentTimeMillis();
             List<Group> groups = gSkyLine2.pointWise(dataItems, k);
             end = System.currentTimeMillis();

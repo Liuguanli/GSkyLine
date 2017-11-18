@@ -45,7 +45,7 @@ public class Main {
             gSkyLine2.dsg(layers);
             end = System.currentTimeMillis();
             System.out.println("dsg耗时:" + (end - begin));
-            test(dataItems);
+//            test(dataItems);
             begin = System.currentTimeMillis();
             int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
             List<Group> groups = gSkyLine2.pointWise(dataItems, k);

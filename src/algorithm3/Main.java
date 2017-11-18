@@ -50,9 +50,9 @@ public class Main {
             end = System.currentTimeMillis();
             System.out.println("unitgroupwise耗时:" + (end - begin));
             System.out.println("group大小：" + groups.size());
-            for (int i = 0; i < groups.size(); i++) {
-                System.out.println(groups.get(i));
-            }
+//            for (int i = 0; i < groups.size(); i++) {
+//                System.out.println(groups.get(i));
+//            }
 
 //            for (int i = 0; i < groups.size(); i++) {
 //                Group group = groups.get(i);

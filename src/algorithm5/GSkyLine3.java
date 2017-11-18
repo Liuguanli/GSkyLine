@@ -53,11 +53,11 @@ public class GSkyLine3 {
         return layers;
     }
 
-    public void dsg(List<Layer> layers) {
+    public void dsg(List<Layer> layers, int k) {
         if (layers == null || layers.size() < 2)
             return;
         int index = 0;
-        for (int i = 1; i < layers.size(); i++) {
+        for (int i = 1; i < k; i++) {
             Layer outer = layers.get(i);
             List<Point> outerPoints = outer.getLayerPoints();
             for (int j = 0; j < i; j++) {
@@ -94,13 +94,24 @@ public class GSkyLine3 {
         }
     }
 
+    private List<Point> choosePointFromTopKLayer(List<Point> points, int k) {
+        List<Point> result = new ArrayList<>();
+        for (Point point : points) {
+            if (point.getLayer() < k) {
+                result.add(point);
+            }
+        }
+        return result;
+    }
+
     public List<Group> unitgroupwise(List<Point> points, int k) {
         List<Group> G_Skylines = new LinkedList<>();
         // build 1-unit group as candidate groups following reverse order of point index
         List<Group> one_unit_group = new LinkedList<>();
-        for (int i = 0; i < points.size(); i++) {
+        List<Point> topKLayerPoints  = choosePointFromTopKLayer(points, k);
+        for (int i = 0; i < topKLayerPoints.size(); i++) {
 
-            Point point = points.get(i);
+            Point point = topKLayerPoints.get(i);
 
 //            if ((Math.abs(point.getDimentionalData()[0] - 167.9396f)) < 0.00001f && (Math.abs(point.getDimentionalData()[1] - 0.452f)) < 0.00001f) {
 //                System.out.print("");
@@ -159,7 +170,7 @@ public class GSkyLine3 {
                 }
             };
             while (candidateGroups.size() > 0) {
-                System.out.println("candidateGroups大小：" + candidateGroups.size());
+//                System.out.println("candidateGroups大小：" + candidateGroups.size());
                 List<Group> tempCandidateGroup = new LinkedList<>();
 //                System.out.println("while begin ------" + l + "-----");
                 for (int j = 0; j < candidateGroups.size(); j++) {
@@ -212,8 +223,8 @@ public class GSkyLine3 {
 //                System.out.println("while end ------" + l + "-----");
 //                candidateGroup.clear();
                 candidateGroups = tempCandidateGroup;
-                System.out.println("tempCandidateGroup：" + tempCandidateGroup.size());
-                System.out.println("G_Skylines：" + G_Skylines.size());
+//                System.out.println("tempCandidateGroup：" + tempCandidateGroup.size());
+//                System.out.println("G_Skylines：" + G_Skylines.size());
 //                System.out.println("candidateGroup大小:" + candidateGroup.size());
                 l++;
             }

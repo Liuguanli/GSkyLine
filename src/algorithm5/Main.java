@@ -38,21 +38,21 @@ public class Main {
             System.out.println("layer(0):" + layers.get(0));
             System.out.println("layer(1):" + layers.get(1));
             end = System.currentTimeMillis();
+            int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
             System.out.println("gSkyLine耗时:" + (end - begin));
             begin = System.currentTimeMillis();
-            gSkyLine3.dsg(layers);
-            test(dataItems);
+            gSkyLine3.dsg(layers, k);
+            // test(dataItems);
             end = System.currentTimeMillis();
             System.out.println("dsg耗时:" + (end - begin));
-            int k = Integer.valueOf(PropertiesHelper.properties.get(Constants.K));
             begin = System.currentTimeMillis();
             List<Group> groups = gSkyLine3.unitgroupwise(dataItems, k);
             end = System.currentTimeMillis();
             System.out.println("unitgroupwise耗时:" + (end - begin));
             System.out.println("group大小：" + groups.size());
-            for (int i = 0; i < groups.size(); i++) {
-                System.out.println(groups.get(i));
-            }
+//            for (int i = 0; i < groups.size(); i++) {
+//                System.out.println(groups.get(i));
+//            }
 
 //            for (int i = 0; i < groups.size(); i++) {
 //                Group group = groups.get(i);

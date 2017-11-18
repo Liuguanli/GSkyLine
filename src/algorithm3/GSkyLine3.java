@@ -164,7 +164,7 @@ public class GSkyLine3 {
                 }
             };
             while (candidateGroups.size() > 0) {
-                System.out.println("candidateGroups大小：" + candidateGroups.size());
+//                System.out.println("candidateGroups大小：" + candidateGroups.size());
                 List<Group> tempCandidateGroup = new LinkedList<>();
 //                System.out.println("while begin ------" + l + "-----");
                 for (int j = 0; j < candidateGroups.size(); j++) {
@@ -217,8 +217,8 @@ public class GSkyLine3 {
 //                System.out.println("while end ------" + l + "-----");
 //                candidateGroup.clear();
                 candidateGroups = tempCandidateGroup;
-                System.out.println("tempCandidateGroup：" + tempCandidateGroup.size());
-                System.out.println("G_Skylines：" + G_Skylines.size());
+//                System.out.println("tempCandidateGroup：" + tempCandidateGroup.size());
+//                System.out.println("G_Skylines：" + G_Skylines.size());
 //                System.out.println("candidateGroup大小:" + candidateGroup.size());
                 l++;
             }
