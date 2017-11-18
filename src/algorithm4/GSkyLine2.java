@@ -185,6 +185,15 @@ public class GSkyLine2 {
         return G_Skylines[k];
     }
 
+    public boolean isGroupAddable(List<Group> groups, Group group) {
+        for (Group temp : groups) {
+            if (!temp.isDominate(group)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public int finMaxLayer(Group group) {
         int maxLayer = 0;
         List<Point> points = group.getPoints();
@@ -240,6 +249,20 @@ public class GSkyLine2 {
             layers.get(p_u_i.getLayer()).getLayerPoints().add(p_u_i);
         }
         return layers;
+    }
+
+    public void refineResult(List<Group> groups) {
+        Set<Integer> deleteSet = new HashSet();
+        for (int i = 0; i < groups.size() - 1; i++) {
+            for (int j = i + 1; j < groups.size(); j++) {
+                if (!deleteSet.contains(j) && groups.get(i).isDominate(groups.get(j))) {
+                    deleteSet.add(j);
+                } else if (!deleteSet.contains(i) && groups.get(j).isDominate(groups.get(i))) {
+                    deleteSet.add(i);
+                }
+            }
+            System.out.println("i = " + i + "   remove size:" + deleteSet.size());
+        }
     }
 
 }

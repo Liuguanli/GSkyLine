@@ -108,7 +108,7 @@ public class GSkyLine3 {
         List<Group> G_Skylines = new LinkedList<>();
         // build 1-unit group as candidate groups following reverse order of point index
         List<Group> one_unit_group = new LinkedList<>();
-        List<Point> topKLayerPoints  = choosePointFromTopKLayer(points, k);
+        List<Point> topKLayerPoints = choosePointFromTopKLayer(points, k);
         for (int i = 0; i < topKLayerPoints.size(); i++) {
 
             Point point = topKLayerPoints.get(i);
@@ -289,6 +289,36 @@ public class GSkyLine3 {
             layers.get(p_u_i.getLayer()).getLayerPoints().add(p_u_i);
         }
         return layers;
+    }
+
+
+    public void refineResult(List<Group> groups) {
+        Set<Integer> deleteSet = new HashSet();
+        for (int i = 0; i < groups.size() - 1; i++) {
+            for (int j = i + 1; j < groups.size(); j++) {
+                if (!deleteSet.contains(j) && groups.get(i).isDominate(groups.get(j))) {
+                    deleteSet.add(j);
+                } else if (!deleteSet.contains(i) && groups.get(j).isDominate(groups.get(i))) {
+                    deleteSet.add(i);
+                }
+            }
+            System.out.println("i = " + i + "   remove size:" + deleteSet.size());
+        }
+
+        for (int i = 0; i < groups.size(); i++) {
+            for (int j = 0; j < groups.size(); j++) {
+                if (i == j)
+                    continue;
+                if (deleteSet.contains(i))
+                    break;
+                if (deleteSet.contains(j))
+                    continue;
+                if (groups.get(i).isDominate(groups.get(j))) {
+                    deleteSet.add(j);
+                }
+            }
+            System.out.println("i = " + i + "   remove size:" + deleteSet.size());
+        }
     }
 
 }

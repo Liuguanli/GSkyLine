@@ -1,5 +1,6 @@
 package algorithm4;
 
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -57,6 +58,24 @@ public class Group {
         } else {
             return false;
         }
+    }
+
+    private BigDecimal claEachDimension(Group group, int i) {
+        BigDecimal bigDecimal = new BigDecimal(group.getPoints().get(0).getDimentionalData()[i].doubleValue());
+        for (int j = 1; j < group.getPoints().size(); j++) {
+            bigDecimal = bigDecimal.add(group.getPoints().get(j).getDimentionalData()[i]);
+        }
+        return bigDecimal;
+    }
+
+    public boolean isDominate(Group group) {
+        int dimension = group.getPoints().get(0).getDimentionalData().length;
+        for (int i = 0; i < dimension; i++) {
+            if (claEachDimension(this, i).compareTo(claEachDimension(group, i)) == 1) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
